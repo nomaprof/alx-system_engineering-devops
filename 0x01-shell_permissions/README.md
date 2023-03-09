@@ -9,4 +9,6 @@
 9. chmod -R ugo+x . - This command is used to assign permissions to all files in the current working directory.
 10. chgrp - This command is used to change the name of a group.
 11. chown -R owner_name:group_name file_name - This command changes the owner and group name of a file.
-12. chown -h owner:group filename - This command changes the owner and group names for symolic link files. 
+12. chown -h owner:group filename - This command changes the owner and group names for symolic link files
+13. chown --from=name_condition new_name file_name - This command changes a file name only if it is owned by a specifically named user.
+14. 
