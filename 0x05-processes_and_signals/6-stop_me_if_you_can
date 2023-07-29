@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Another way to stop a program
+
+pkill -f 4-to_infinity_and_beyond

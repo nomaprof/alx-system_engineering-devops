@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Shows all processes that are  currently running
+#+ Ensures result is displayed in a user friendly way
+
+ps -a uf

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Shows a string with another string
+#+ on encountering a sleep 2 command
+
+trap 'echo "I am invincible!!!"' SIGTERM
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
