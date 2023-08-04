@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Use this script to display all IPV4 addresses used on a machine
+
+ifconfig -a | grep inet | cut -d: -f2 | cut -d" "  -f1
