@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 # This script displays a twelve hour clock for a specified duration
 
-time=0
-
-while [ $time -le 12 ]
+while [ $hour -le 12 ]
 do
-    echo "Hour: $time"
+    echo "Hour: $hour"
     minute=1
     while [ $minute -le 59 ]
     do
-     echo "$minute"
-     ((minute++))
+        echo $minute
+        minute=$(( minute + 1 ))
     done
-    ((hour++))
+    hour=$(( hour + 1 ))
 done
