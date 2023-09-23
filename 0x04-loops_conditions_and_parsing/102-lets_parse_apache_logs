@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script is used to parse Apache log files
+
+thefile="apache-access.log"
+awk -F' ' '{ print $1, $9 }' $thefile

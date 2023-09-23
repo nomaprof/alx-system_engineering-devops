@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script writes 'Best School' ten times using the until loop
+
+j=1
+
+until [ $j -gt 10 ]
+do
+    echo "Best School"
+    ((j++))
+done

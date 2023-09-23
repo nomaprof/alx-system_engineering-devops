@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script writes numbers and a comment about bad luck from various countries at the fourth, ninth, and seventeenth iteration
+
+j=1
+
+while [ $j -le 20 ]
+do
+    echo "$j"
+    case $j in
+     "4") echo "bad luck from China";;
+     "9") echo "bad luck from japan";;
+     "17") echo "bad luck from Italy";;
+    esac
+    ((j++))
+done

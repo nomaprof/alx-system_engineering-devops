@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script groups parsed data based on defined criteria
+
+thefile="apache-access.log"
+awk -F' ' '{ print $1, $9}' $thefile | sort | uniq -c|sort -nr

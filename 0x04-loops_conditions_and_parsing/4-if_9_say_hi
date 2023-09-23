@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script write "Best School" ten times but says 'Hi' at the ninth iteration
+
+j=1
+
+while [ $j -le 10 ]
+do
+    echo "Best School"
+    if [ $j -eq 9 ]
+    then
+        echo "Hi"
+    fi
+    ((j++))
+done

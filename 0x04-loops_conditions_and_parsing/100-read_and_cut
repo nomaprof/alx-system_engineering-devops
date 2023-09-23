@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script writes the content of the password file to standard output
+
+thefile="/etc/passwd"
+while IFS= read -r line
+do
+    echo "$line" | cut -d":" -f1,3,6
+done < "$thefile"

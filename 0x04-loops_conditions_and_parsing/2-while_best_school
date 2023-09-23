@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This scripts writes 'Best School' ten times using the while loop
+
+j=1
+
+while [ $j -le 10 ]
+do
+    echo "Best School"
+    ((j++))
+done

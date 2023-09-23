@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# This script displays the numbers one to hundred with certain conditions
+
+for ans in {1..100}
+do
+  if (( ans % 3 == 0 && ans % 5 == 0 ))
+  then
+    echo "FizzBuzz"
+  elif (( ans % 3 == 0 ))
+  then
+    echo "Fizz"
+  elif (( ans % 5 == 0 ))
+  then
+    echo "Buzz"
+  else
+    echo "$ans"
+  fi
+done

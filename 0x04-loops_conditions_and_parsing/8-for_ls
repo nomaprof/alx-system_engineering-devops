@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays the names of files in a directory using the first hypen as a tokenizer
+
+thelist=$(ls)
+
+for j in $thelist; do
+    echo "$j" | cut -d '-' -f2
+done
