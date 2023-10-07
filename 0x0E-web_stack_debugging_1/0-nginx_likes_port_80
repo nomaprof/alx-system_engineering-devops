@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script fixes the inablility to connect to port 80 on a webserver running nginx
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
