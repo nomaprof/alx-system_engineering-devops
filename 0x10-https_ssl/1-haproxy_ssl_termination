@@ -40,7 +40,7 @@ frontend  nomaetinosa-frontend-http
         default_backend nomaetinosa-backend
 
 frontend nomaetinosa-frontend-https
-	bind *:443 ssl crt /etc/haproxy/certs/www.nomaetinosa.tech.pem
+	bind *:443 ssl crt /etc/letsencrypt/archive/www.nomaetinosa.tech/www.nomaetinosa.tech.pem
 	http-request set-header X-Forwarded-Proto https
 	default_backend nomaetinosa-backend
 
