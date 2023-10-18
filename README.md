@@ -1,1 +1,1 @@
-This is for more practice on Shell Navigation
+I am learning DevOps and SER using these tasks.

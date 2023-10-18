@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script prevents the user from using the server as a root user or superuser
+
+# Set users to be nginx users
+sed -i "s/#user www-data/user nginx/" /etc/nginx/nginx.conf
+# Allow listening for IPs on port 8080
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+# Make user have the priviledge to read and write data to config file
+chmod 644 /etc/nginx/nginx.conf
+# Kill the apache version process. It can cause interference
+pkill apache2
+# Start the server  as an nginx user
+sudo -u nginx service nginx start
