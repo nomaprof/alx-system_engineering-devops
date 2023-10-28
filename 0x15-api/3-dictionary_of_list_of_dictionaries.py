@@ -1,34 +1,31 @@
 #!/usr/bin/python3
-"""This Python script gets employee data in JSON dictionary format"""
+""" This Python script export employee information as a JSON file """
+import json
+import requests
+import sys
 
-from json import dump
-from requests import get
-from sys import argv
 
 if __name__ == "__main__":
-    users_url = "https://jsonplaceholder.typicode.com/users"
-    users_result = get(users_url).json()
+    url = 'https://jsonplaceholder.typicode.com/'
+    user = '{}users'.format(url)
+    res = requests.get(user)
+    json_o = res.json()
+    d_task = {}
+    for user in json_o:
+        name = user.get('username')
+        userid = user.get('id')
+        todos = '{}todos?userId={}'.format(url, userid)
+        res = requests.get(todos)
+        tasks = res.json()
+        l_task = []
+        for task in tasks:
+            dict_task = {"username": name,
+                         "task": task.get('title'),
+                         "completed": task.get('completed')}
+            l_task.append(dict_task)
 
-    big_dict = {}
-    for user in users_result:
-        todo_list = []
-
-        pep_fix = "https://jsonplaceholder.typicode.com"
-        todos_url = pep_fix + "/user/{}/todos".format(user.get("id"))
-        name_url = "https://jsonplaceholder.typicode.com/users/{}".format(
-            user.get("id"))
-
-        todo_result = get(todos_url).json()
-        name_result = get(name_url).json()
-        for todo in todo_result:
-            todo_dict = {}
-            todo_dict.update({"username": name_result.get("username"),
-                              "task": todo.get("title"),
-                              "completed": todo.get("completed")})
-            todo_list.append(todo_dict)
-
-        big_dict.update({user.get("id"): todo_list})
-
-    with open("todo_all_employees.json", 'w') as f:
-        dump(big_dict, f)
+        d_task[str(userid)] = l_task
+    filename = 'todo_all_employees.json'
+    with open(filename, mode='w') as f:
+        json.dump(d_task, f)
 
