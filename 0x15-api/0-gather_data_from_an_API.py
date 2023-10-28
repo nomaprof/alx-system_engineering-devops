@@ -1,31 +1,25 @@
-#!/usr/bin/python4
-"""This Python script is used to access the TODO lists of employees usning REST API"""
+#!/usr/bin/python3
+"""
+This Python script is used to get data about employee
+using REST API
+"""
 
-import requests
-import sys
-
+from requests import get
+from sys import argv
 
 if __name__ == '__main__':
-    employeeId = sys.argv[1]
-    baseUrl = "https://jsonplaceholder.typicode.com/users"
-    url = baseUrl + "/" + employeeId
+    main_url = 'https://jsonplaceholder.typicode.com'
+    todo_url = main_url + "/user/{}/todos".format(argv[1])
+    name_url = main_url + "/users/{}".format(argv[1])
+    todo_result = get(todo_url).json()
+    name_result = get(name_url).json()
 
-    response = requests.get(url)
-    employeeName = response.json().get('name')
-
-    todoUrl = url + "/todos"
-    response = requests.get(todoUrl)
-    tasks = response.json()
-    done = 0
-    done_tasks = []
-
-    for task in tasks:
-        if task.get('completed'):
-            done_tasks.append(task)
-            done += 1
-
+    todo_num = len(todo_result)
+    todo_complete = len([todo for todo in todo_result
+                         if todo.get("completed")])
+    name = name_result.get("name")
     print("Employee {} is done with tasks({}/{}):"
-          .format(employeeName, done, len(tasks)))
-
-    for task in done_tasks:
-        print("\t {}".format(task.get('title')))
+          .format(name, todo_complete, todo_num))
+    for todo in todo_result:
+        if (todo.get("completed")):
+            print("\t {}".format(todo.get("title")))
