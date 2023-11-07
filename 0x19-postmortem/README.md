@@ -1,9 +1,9 @@
-Tinpear Learning Management System Insecure Connection Incident Report
+#Tinpear Learning Management System Insecure Connection Incident Report
 
 ![image](https://github.com/nomaprof/alx-system_engineering-devops/assets/80814144/50b1d941-5b7f-468d-98c0-70d08efc8ee5)
 
 
-Issue Summary:
+##Issue Summary:
 
 A 'your connection is not private' error was experienced by most of our
 customers from 11:07 am (WAT) till it was resolved at about 12:03 pm (WAT).
@@ -20,7 +20,7 @@ that caused the verification of secure connection with our servers by our custom
 browser to fail.
 
 
-Timeline:
+##Timeline:
 
 * The incident started at 11:07 am (WAT)
 
@@ -46,7 +46,7 @@ Timeline:
 * 12:03 pm (WAT): Service was fully restored and 100% of our customers could securely access our servers.
 
 
-Root Cause and Resolution:
+##Root Cause and Resolution:
 
 * An expired SSL certificate prevented all our customers' browsers from being able to verify that our
   servers can be securely accessed.
@@ -56,7 +56,7 @@ Root Cause and Resolution:
 * After payments, the servers were reconfigured with the new SSL credentials and restarted.
 
 
-Corrective and preventive measures:
+##Corrective and preventive measures:
 
 * We now have automatic renewal enabled with .tech domains (our domain registrar) and SSL certificate
   provider.
