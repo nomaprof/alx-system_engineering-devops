@@ -5,6 +5,8 @@
 
 **Issue Summary:**
 
+Date of incident: 16 October, 2023.
+
 A 'your connection is not private' error was experienced by most of our
 customers from 11:07 am (WAT) till it was resolved at about 12:03 pm (WAT).
 
