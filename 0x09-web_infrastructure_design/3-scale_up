@@ -1,0 +1,8 @@
+As the clients of foobar.com increases, it will be great to have specialized servers to handle each aspect of the 
+web infrastructure.
+
+The application server, webserver, and database sever are separated from each other to allow for scaling when the time
+for adding new web devices arrives.
+
+Scaling web infrastructure is a part of all well drafted web services. At some point, more web devices would be needed
+and a great way to scale is to separate the functions of the servers.
