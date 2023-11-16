@@ -1,0 +1,10 @@
+foobar.com is first registered with a domain name provider. The main domain (foobar.com) and its subdomains
+like (www.foobar.com) are then made to point to the server's IP address (8.8.8.8). The webserver (NginX) is 
+then installed on the server to serve up the application files (in form of web pages) whenever it is requested
+over the internet. The application server works along with the webserver but specifically handles the business logic
+needs of foobar.com. The webserver and the application server are both linked the the database server to be able to
+track changes made by clients to various records and forms maintained at the website.
+
+This type of web infrastructure is susceptible to single-point-of-failure problems due to its lack of redundancy. This
+type of infrastructure make it impossible to aviod downtime whenever software is being updated. Another disadvantage of
+this infrastructure is its inablility to scale when traffic becomes high.
