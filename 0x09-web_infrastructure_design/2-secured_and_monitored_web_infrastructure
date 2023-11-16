@@ -1,0 +1,15 @@
+The web infrastructure with a load balancer can be secured using a firewall. The firewall serves as a gatekeeper
+to prevent unwanted and unauthorized traffic from getting to the servers. In the case of the two server one load
+balancer in the active-active configuration, each sever is given its own firewall to ensure that unauthorized persons
+do not gain access to the servers.
+
+Another aspect of protection that can be implemented on the active-active web infrastructure arrangement is a secure
+socket layer (SSL) certificate that encrypts all communcation between the server and clients thereby converting the 
+traffic between the client and server into an HTTPS traffic.
+
+The performances of all the servers can also be monitored using a monitoring client to ensure proactive handling of imminient
+problems and detection of anomalies during the operation of the servers.
+
+The SSL termination at the load balancer may prevent the back-end server from knowing the protocol service requested by the client. 
+If only one database has write priviledge, issues may arise in the event that the write database becomes faulty. Implementing redunancy
+on web infrastructures may also be very expensive.
