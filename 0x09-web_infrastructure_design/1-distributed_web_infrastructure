@@ -1,0 +1,13 @@
+The web infrastructure that hosts foobar.com can be improved using two (2) servers and a load balancer. 
+The load balancer enables an active-active setup that ensures that the two servers are running at all times.
+Each of the servers each has a webserver, an application server, and a database. The load balancer shares the
+incoming traffic between the two active servers.
+
+The database of each server are mirrors of each other with one of the databases serving as the master and the
+other database serving as the slave. At every moment in time, what is saved to the master database is replicated
+automatically in the slave database.
+
+The load balancer is also a server that runs a software designed specifically to enable traffic sharing. An example of such software is Haproxy.
+
+This infrastructure is redundant and enables an escape from the single-point-of-failure problem but it is however,
+not secure and does not enable active traffic monitoring.
